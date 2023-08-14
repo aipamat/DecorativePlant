@@ -1,0 +1,15 @@
+<resources>
+    <!--Title Onboarding-->
+    <string name="title1">Selamat Datang</string>
+    <string name="title2">Fungsi Aplikasi</string>
+    <string name="title3">Mari Mulai</string>
+    <!--./Title Onboarding-->
+    <!--Description Onboarding-->
+    <string name="description1">Di aplikasi Decorative Plant, aplikasi ini diperuntukan bagi orang yang ingin menyukai tanaman hias</string>
+    <string name="description2">Aplikasi ini dapat digunakan untuk melihat tanaman hias dan deskripsi tanaman hias</string>
+    <string name="description3">Mari mulai mencoba aplikasi ini ,ayo bertanam hias !</string>
+    <!--./Description Onboarding-->
+
+    <string name="app_name">DecorativePlant</string>
+    <string name="tanaman">Tanaman</string>
+</resources>
