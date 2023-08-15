@@ -16,8 +16,10 @@ import com.arif.decorativeplant.R;
 import com.arif.decorativeplant.activities.MainActivity;
 
 public class OnboardingActivity extends AppCompatActivity {
-    //    29 Juni 2023
-    //    NIM - NAMA - KELASIF6
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
+
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
     private TextView[] dots;

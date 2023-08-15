@@ -3,6 +3,9 @@ package com.arif.decorativeplant.model;
 import java.io.Serializable;
 
 public class ModelMain implements Serializable {
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
 
     String nama;
     String image;

@@ -14,8 +14,9 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.arif.decorativeplant.R;
 
 public class ObAdapter extends PagerAdapter {
-    //    29 Juni 2023
-    //    NIM - NAMA - KELASIF6
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
 
     private Context context;
     private LayoutInflater layoutInflater;

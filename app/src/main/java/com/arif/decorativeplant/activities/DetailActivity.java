@@ -19,6 +19,9 @@ import com.arif.decorativeplant.model.ModelMain;
 import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
 
     public static final String DETAIL_TANAMAN = "DETAIL_TANAMAN";
     String strNamaTanaman, strManfaatTanaman;

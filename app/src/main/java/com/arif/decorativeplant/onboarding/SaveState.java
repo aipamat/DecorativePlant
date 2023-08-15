@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SaveState {
-//    29 Juni 2023
-//    NIM - NAMA - KELAS
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
+
     private Context context;
     private String saveName;
     private SharedPreferences sp;

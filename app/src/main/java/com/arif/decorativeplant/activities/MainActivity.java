@@ -32,6 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
 
     List<ModelMain> modelMain = new ArrayList<>();
     MainAdapter mainAdapter;
@@ -111,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } catch (IOException ignored) {
-            Toast.makeText(MainActivity.this, "Ups, ada yang tidak beres. " +
-                    "Coba ulangi beberapa saat lagi.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Data tidak terbaca. " +
+                    "Coba Ulangi Lagi Nanti.", Toast.LENGTH_SHORT).show();
         }
     }
 

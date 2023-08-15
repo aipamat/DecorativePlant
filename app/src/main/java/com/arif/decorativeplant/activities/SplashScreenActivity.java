@@ -10,6 +10,10 @@ import com.arif.decorativeplant.R;
 import com.arif.decorativeplant.onboarding.OnboardingActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
+    //    NIM : 10120211
+    //    Nama : Arif Rachmat Darmawan
+    //    Kelas : IF-6
+
     private int waktu_loading = 1000;
 
     @Override
