@@ -26,14 +26,19 @@ public class OnboardingActivity extends AppCompatActivity {
     private SaveState saveState;
     private Button mulai;
 
+    // Mengatur layar menjadi fullscreen.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
+
+        // Inisialisasi elemen UI.
         viewPager = findViewById(R.id.viewPager);
         dotsLayout = findViewById(R.id.ll_dotsLayout);
         mulai = findViewById(R.id.btn_mulai);
+
+        // Listener untuk tombol "Mulai" yang akan mengarahkan ke MainActivity.
         mulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +48,8 @@ public class OnboardingActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        // Listener untuk tombol "Skip" yang akan langsung menggeser ViewPager ke halaman terakhir.
         TextView skip = findViewById(R.id.tv_skip);
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,20 +58,26 @@ public class OnboardingActivity extends AppCompatActivity {
             }
         });
 
+
+        // Mengecek apakah pengguna sudah melewati onboarding sebelumnya.
         saveState = new SaveState(this, "ob");
         if (saveState.getState() == 1) {
             startActivity(new Intent(OnboardingActivity.this, MainActivity.class));
             finish();
         }
 
+        // Inisialisasi adapter dan ViewPager.
         ObAdapter adapter = new ObAdapter(this);
         viewPager.setAdapter(adapter);
+
+        // Listener untuk perubahan halaman pada ViewPager.
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
+            // Mengatur tampilan tombol "Mulai" dan "Skip" serta indikator titik-titik.
             @Override
             public void onPageSelected(int position) {
                 dotsFunction(position);
@@ -87,9 +100,11 @@ public class OnboardingActivity extends AppCompatActivity {
             }
         });
 
+        // Menampilkan titik-titik indikator pada halaman pertama.
         dotsFunction(0);
     }
 
+    // Fungsi untuk mengatur tampilan titik-titik indikator berdasarkan halaman saat ini.
     private void dotsFunction(int pos) {
         dots = new TextView[3];
         dotsLayout.removeAllViews();
@@ -98,7 +113,7 @@ public class OnboardingActivity extends AppCompatActivity {
 
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&bull"));
-            dots[i].setTextColor(getColor(R.color.white));  //unselected color
+            dots[i].setTextColor(getColor(R.color.white));  // Warna titik-titik yang tidak dipilih.
             dots[i].setTextSize(40);
             dots[i].setPadding(10, 0, 10, 0);
 
@@ -107,8 +122,8 @@ public class OnboardingActivity extends AppCompatActivity {
         }
 
         if (dots.length > 0) {
-            dots[pos].setTextColor(getColor(R.color.bg_pink));   //selected dot color
-            dots[pos].setTextSize(40);  //selected dots size
+            dots[pos].setTextColor(getColor(R.color.bg_pink));   // Warna titik-titik yang dipilih.
+            dots[pos].setTextSize(40);  // Ukuran titik-titik yang dipilih.
         }
     }
 }

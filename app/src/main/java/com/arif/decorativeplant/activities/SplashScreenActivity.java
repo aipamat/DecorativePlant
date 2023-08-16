@@ -14,22 +14,24 @@ public class SplashScreenActivity extends AppCompatActivity {
     //    Nama : Arif Rachmat Darmawan
     //    Kelas : IF-6
 
+    // Deklarasi waktu tampilan SplashScreen (dalam milidetik).
     private int waktu_loading = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        // Menggunakan Handler untuk menunda pindah ke aktivitas berikutnya.
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                //setelah loading maka akan langsung berpindah ke home activity
+                // Setelah loading selesai, akan pindah ke OnboardingActivity.
                 Intent home = new Intent(SplashScreenActivity.this, OnboardingActivity.class);
                 startActivity(home);
-                finish();
+                finish(); // Menutup SplashScreenActivity agar tidak bisa kembali.
 
             }
-        }, waktu_loading);
+        }, waktu_loading); // Menjalankan fungsi di atas setelah waktu_loading milidetik.
     }
 }

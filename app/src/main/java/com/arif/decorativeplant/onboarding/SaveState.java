@@ -12,19 +12,22 @@ public class SaveState {
     private String saveName;
     private SharedPreferences sp;
 
+    // Konstruktor untuk inisialisasi objek SaveState dengan konteks dan nama penyimpanan.
     public SaveState(Context context, String saveName) {
         this.context = context;
         this.saveName = saveName;
-        sp = context.getSharedPreferences(saveName,context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(saveName, context.MODE_PRIVATE);
     }
 
-    public void setState(int key){
+    // Fungsi untuk mengatur status state dalam penyimpanan.
+    public void setState(int key) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putInt("key",key);
+        editor.putInt("key", key);
         editor.apply();
     }
 
-    public int getState(){
-        return sp.getInt("key",0);
+    // Fungsi untuk mendapatkan status state dari penyimpanan.
+    public int getState() {
+        return sp.getInt("key", 0);
     }
 }

@@ -28,6 +28,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     private List<ModelMain> modelMainList;
     private List<ModelMain> modelMainFilterList;
 
+    // Implementasi Filterable memungkinkan filter pada RecyclerView.
     @Override
     public Filter getFilter() {
         return modelFilter;
@@ -60,6 +61,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         }
     };
 
+    // Konstruktor adapter.
     public MainAdapter(Context context, List<ModelMain> modelMain) {
         this.context = context;
         this.modelMainList = modelMain;
@@ -68,17 +70,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     @Override
     public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // Menghubungkan layout item dengan ViewHolder.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_main, parent, false);
         return new MainViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MainViewHolder holder, int position) {
+        // Mengatur data dari model ke elemen UI di dalam ViewHolder.
         ModelMain item = modelMainList.get(position);
-
         holder.tvNamaTanaman.setText(item.getNama());
 
-        //send data to detail activity
+        // Mengatur aksi saat card view di klik.
         holder.cvListTanaman.setOnClickListener(view -> {
             Intent intent = new Intent(context, DetailActivity.class);
             intent.putExtra(DetailActivity.DETAIL_TANAMAN, modelMainList.get(position));
@@ -92,6 +95,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         return modelMainList.size();
     }
 
+    // ViewHolder untuk tampilan setiap item.
     public static class MainViewHolder extends RecyclerView.ViewHolder {
 
         CardView cvListTanaman;
